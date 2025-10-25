@@ -26,3 +26,18 @@ def update_sudoku_board(x, y, value):
         sudoku_board[x][y] = (value, False)
         return {"message": "Cell updated successfully!"}
 @app.post("/items/")
+@app.get("/check-board")
+def check_sudoku_board():
+    countOfValue = 0
+    oneToNine = 0
+    for row in sudoku_board:
+        oneToNine = 1
+        for cell in row:
+            if cell[] = oneToNine:
+                countOfValue += 1
+                break
+            else: oneToNine += 1
+    if countOfValue == 81:
+        return {"message": "Board is full!"}
+    else:
+        return {"message": "Board is not full!"}
